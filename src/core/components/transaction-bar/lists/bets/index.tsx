@@ -27,7 +27,7 @@ export default function BetList({ items }: Props) {
   return (
     <div className="relative">
       {items.map((item, idx) => (
-        <ListItem key={idx} data={item} />
+          <ListItem key={idx} data={item} />
       ))}
     </div>
   )

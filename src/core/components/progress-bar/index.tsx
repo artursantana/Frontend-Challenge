@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 
 type Props = {
   value: number
@@ -34,12 +34,23 @@ export default function ProgressBar({
   color,
   label = 'Próxima Rodada em',
 }: Props) {
+
+
+  const [dynamicColor, setDynamicColor] = useState<string | undefined>(getBackgroundColor(color));
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDynamicColor((prevColor) => (prevColor === 'bg-red-700' ? 'bg-[#28a909]' : 'bg-red-700'));
+    }, 990*10);
+    
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="w-full relative flex items-center border border-gray-500 bg-gray-600 bg-opacity-50 border-opacity-50 rounded-md h-6 dark:bg-gray-700">
       <div
-        className={`${getBackgroundColor(
-          color
-        )} h-full transition-all duration-100 rounded-md`}
+        className={`${dynamicColor} h-full transition-all duration-100 rounded-md`}
         style={{
           width: `${(value / max) * 100}%`,
           transitionTimingFunction: 'linear',
