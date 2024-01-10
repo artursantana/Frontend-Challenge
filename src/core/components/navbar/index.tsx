@@ -99,6 +99,7 @@ export default function Navbar({
     <div className="">
       <div className="navbar mx-auto  my-auto sm:px-3 h-12 flex items-center w-full justify-end">
         <h1 className="self-center">{getGameLogo(game)}</h1>
+        
 
         <div className="flex items-center ml-auto gap-2">
           <button
@@ -134,6 +135,7 @@ export default function Navbar({
                     src="https://api.multiavatar.com/NOME.svg"
                     className="h-12 invert rounded-lg"
                   />
+                  
                   <div className="mt-1">
                     <p className="font-bold text-xs text-white">
                       {/* Nome do Jogador */}
@@ -145,6 +147,7 @@ export default function Navbar({
                     </p>
                   </div>
                 </div>
+                
                 <div className="px-2 text-xs item">
                   <div className="form-control">
                     <label className="label hover:font-bold cursor-pointer">

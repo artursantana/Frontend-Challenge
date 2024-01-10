@@ -40,7 +40,9 @@ function HomePage() {
           </div>
           <div className="grid p-3 gap-3 grow rounded w-full grid-cols-12">
             <div className="col-span-12 sm:col-span-4 grow xl:col-span-3 order-2 sm:order-1">
+      
               <TransactionBar />
+
             </div>
 
             <div className="col-span-12 sm:col-span-8 xl:col-span-9 relative order-1 sm:order-1 lg:order-2">
@@ -59,6 +61,7 @@ function HomePage() {
                 </div>
 
                 <Controls color="lime" position={'center'} />
+                
               </div>
 
               <Snackbar />

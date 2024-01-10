@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import ProgressBar from '@/core/components/progress-bar'
+import ProgressBar from './progress-bar/index'
 import If from '@/core/components/conditions/if'
 import { GameStatus } from '@/core/providers/enums/game-status'
 import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
@@ -11,9 +11,23 @@ type Props = {
 export default function Display({ color }: Props) {
   const { startTimeout, gameStatus, multiplier } =
     useContext<any>(CrashGameContext)
+  const [displayText, setDisplayText] = useState('o piloto caiu!')
+
+
+  useEffect( () => {
+
+    if(gameStatus === GameStatus.GAME_OVER) {
+      const countdownTimer = setTimeout(()=> {
+        setDisplayText('Go!')
+      },5000)
+
+      return () => clearTimeout(countdownTimer)
+    }
+
+  },[gameStatus])
 
   return (
-    <div className="absolute top-0 pointer-events-none left-0 flex flex-col gap-3 justify-center items-center w-full h-full">
+    <div className="absolute top-20 pointer-events-none left-0 flex flex-col gap-3 justify-center items-center w-full h-full">
       <If condition={gameStatus == GameStatus.IDLE}>
         <div className="w-full flex flex-col items-center justify-center">
           <div className="w-44">
