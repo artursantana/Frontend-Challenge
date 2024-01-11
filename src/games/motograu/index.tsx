@@ -65,6 +65,7 @@ function HomePage() {
               </div>
 
               <Snackbar />
+              
             </div>
           </div>
         </section>

@@ -17,12 +17,14 @@ export default function ProgressBar({ max, label = 'Próxima Rodada em' }: Props
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCount((prevCount) => Math.max(prevCount - 1, 0));
+      setCount((prevCount) => {
+        const newCount = Math.max(prevCount - 1, 0);
+        return newCount === prevCount ? prevCount : newCount; 
+      });
     }, 1000);
-
+  
     return () => clearInterval(interval);
   }, []);
-
   const dynamicColor = getBackgroundColor(count);
 
   return (
