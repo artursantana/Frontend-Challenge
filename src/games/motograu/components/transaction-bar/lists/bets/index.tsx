@@ -1,6 +1,7 @@
 import React from 'react'
 import ListItem from './list-item'
 
+
 export enum TransactionStatus {
   PENDING = 'pending',
   PROCESSED = 'processed',
@@ -24,12 +25,15 @@ type Props = {
 }
 
 export default function BetList({ items }: Props) {
+  
    return (
-    <div className="relative">
-      {items.map((item, idx) => (
-            <ListItem key={idx} data={item} />
-          
-      ))}
+
+    <div>
+      <div className="relative">
+        {items.map((item, idx) => (
+              <ListItem key={idx} data={item} />
+        ))}
+      </div>
     </div>
   )
 }

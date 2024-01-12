@@ -4,14 +4,17 @@ import React, { useContext, useEffect } from 'react'
 import Display from './components/display'
 import Snackbar from '@/core/components/snackbar'
 import Results from '@/core/components/results'
-import TransactionBar from '@/core/components/transaction-bar'
+import TransactionBar from './components/transaction-bar'
 import Controls from '@/core/components/controls/crash-control'
 import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
 import { SessionContext } from '@/core/providers/session.provider'
 import { GameStatus } from '@/core/providers/enums/game-status'
 import Navbar from '@/core/components/navbar'
+import Index from './components/RoudWinner/Index'
+import Context from './components/transaction-bar/lists/bets/LucroContext/Context'
 
 function HomePage() {
+  
   const { setLoading } = useContext<any>(SessionContext)
   const { iframeRef, gameStatus, executeAction, balance } =
     useContext<any>(CrashGameContext)
@@ -40,9 +43,9 @@ function HomePage() {
           </div>
           <div className="grid p-3 gap-3 grow rounded w-full grid-cols-12">
             <div className="col-span-12 sm:col-span-4 grow xl:col-span-3 order-2 sm:order-1">
-      
-              <TransactionBar />
-
+              
+                <Index />
+              <TransactionBar variant={''} />
             </div>
 
             <div className="col-span-12 sm:col-span-8 xl:col-span-9 relative order-1 sm:order-1 lg:order-2">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Transaction, TransactionStatus } from '.'
-import If from '@/core/components/conditions/if'
+import If from '../../../../../../core/components/conditions/if'
 
 type Props = {
   data: Transaction
@@ -8,10 +8,10 @@ type Props = {
 
 
 export default function ListItem({ data }: Props) {
+  
   const isGreen = data.outcome == 'win'
   const isRed = data.outcome == 'lose'
   const [randomNumber, setRandomNumber] = useState(null)
-
 
   
   useEffect(() => {
