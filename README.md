@@ -16,9 +16,9 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) e o [Yarn](https://yarnpkg
 ```bash
 git clone:  https://github.com/artursantana/Frontend-Challenge
 
-2.  cd seu-projeto
-3.  yarn install
-4.  yarn dev
+1.1 cd seu-projeto
+1.2  yarn install
+1.3  yarn dev
 
 
 
